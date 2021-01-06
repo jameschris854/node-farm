@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+    href="https://fonts.googleapis.com/css?family=Megrim|Nunito+Sans:400,900"
+    rel="stylesheet"
+  />
+  <link
+    rel="icon"
+    href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/155/ear-of-maize_1f33d.png"
+  />
+    <!-- <link rel="stylesheet" href="/templates/productscard.css"> -->
+
+    <title>Fresh Avocados 🥑 /// NODE FARM</title>
+    <style>
+                *,
+        *::before,
+        *::after {
+          margin: 0;
+          padding: 0;
+          box-sizing: inherit;
+        }
+        html {
+          box-sizing: border-box;
+        }
+        body {
+          line-height: 1.7;
+          font-family: "Nunito Sans", sans-serif;
+          color: #555;
+          min-height: 120vh;
+          background: linear-gradient(to bottom right, #9be15d, #00e3ae);
+        }
+        .container {
+          margin-top: 3rem;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+        }
+        .title {
+          display: block;
+          font-family: "Megrim", sans-serif;
+          font-size: 3rem;
+          color: white;
+          transform: skewY(-5deg);
+          text-align: center;
+          position: relative;
+          word-spacing: 3px;
+        }
+        .title::before {
+          content: "";
+          display: block;
+          height: 65%;
+          width: 100%;
+          position: absolute;
+          top: 105%;
+          left: 50%;
+          background: linear-gradient(to bottom, #9be15d, #00e3ae);
+          opacity: 0.1;
+          z-index: -1;
+          transform: skewY(370deg) translate(-50%, -50%);
+          box-shadow: 0px 0px 0px 0px #00e3ae;
+          transition: 0s;
+        }
+        .title:hover::before {
+          opacity: 0.8;
+        }
+        .layout {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 35rem;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-direction: column;
+          margin-top: 4rem;
+          box-shadow: 0 3rem 6rem 1rem rgba(0, 0, 0, 0.2);
+        }
+        .back {
+          position: absolute;
+          height: 2rem;
+          align-self: flex-start;
+          z-index: 2;
+          margin-left: 1rem;
+        }
+        .back > a > img {
+          height: 2.5rem;
+          z-index: 2;
+          transition: 0.3s;
+        }
+        .back > a > img:hover {
+          transform: scale(1.1);
+        }
+        .organic {
+          position: absolute;
+          align-self: flex-end;
+          z-index: 2;
+          border-radius: 50%;
+          box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
+          height: 7rem;
+          width: 7rem;
+          top: -4;
+          right: -4;
+          transform: translate(2rem, -3rem) rotate(30deg);
+          background-image: linear-gradient(to bottom, #9be15d, #00e3ae);
+          transition: 0.5s;
+        }
+        .organic:hover {
+          transform: translate(2rem, -3rem) rotate(0deg);
+        }
+        .type.{%type-class%} > div {
+          font-size: 1.2rem;
+          font-family: "Nunito Sans", sans-serif;
+          font-weight: 900;
+          text-transform: uppercase;
+          color: white;
+          text-align: center;
+          margin-top: 38%;
+        }
+        .image > img {
+          opacity: 1;
+          width: 35rem;
+          transform: scaleY(1.18);
+        }
+        .product-name {
+          line-height: 1.7;
+          font-family: "Megrim", sans-serif;
+          font-size: 2.2rem;
+          background: linear-gradient(#9be15d, #00e3ae);
+          font-weight: 600;
+          color: white;
+          width: 35rem;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          text-align: center;
+        }
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          width: 35rem;
+          background-color: white;
+          color: #555;
+          grid-column-gap: 10px;
+          grid-row-gap: 10px;
+          padding-top: 30px;
+          padding-bottom: 30px;
+        }
+        .grid > div {
+          text-align: center;
+          font-size: 1.2rem;
+        }
+
+        .shopping-cart {
+          font-size: 2rem;
+          background: #5de173;
+
+          width: 35rem;
+          text-align: center;
+          transform: scale(1.1) skew(-20deg);
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          transition: 0.3s;
+        }
+        .shopping-cart:hover {
+          transform: scale(1.2) skew(-20deg);
+        }
+        .shopping-cart-text {
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: white;
+          text-transform: uppercase;
+          transform: skew(20deg);
+        }
+        .description {
+          background: white;
+          color: rgb(100, 100, 100);
+          width: 35rem;
+          text-align: center;
+        }
+        .description > p {
+          margin: 2rem;
+          margin-top: 3rem;
+          margin-bottom: 3rem;
+        }
+        .organic {
+        
+        color:rgb(50, 205, 89);
+        
+        }
+        .not-organic {
+       
+        display: none;
+        
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">🌽 Node Farm 🥦</div>
+        <div class="layout"> 
+            <div class="back"><a href="#"><img src="/images/back.png" alt=""></a></div>
+            <div class="type {%type-class%}"><div>{%type%}</div></div>
+            <div class="image"><img src="/images/avacado.jpg" alt=""></div>
+            <div class="product-name"><div>{%productname%}</div></div>
+            <div class="grid">
+                <div>🌍 {%from%}</div>
+                <div>❤️ {%vitamen%}</div>
+                <div>📦{%quantity%} 🥑</div>
+                <div>🏷 {%price%}€</div>
+            </div>
+            <div class="shopping-cart"><div class="shopping-cart-text">🛒 Add to shopping card ({%price%}€)</div></div>
+            <div class="description"><p>{%description%}</p></div>
+        </div>
+    </div>
+</body>

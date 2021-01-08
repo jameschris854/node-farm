@@ -1,11 +1,14 @@
 const fs = require('fs');
 const http = require('http');
 const url = require('url');
+const nStatic = require('node-static');
+const fileServer = new nStatic.Server('./public');
+
+
+
 const tempOverview = fs.readFileSync('./templates/overview.html','utf-8');
 const tempProducts = fs.readFileSync('./templates/productscard.html','utf-8');
 const card = fs.readFileSync('./templates/card.html','utf-8')
-
-
 const data = fs.readFileSync('./dev-data/data.json')
 const dataObj = JSON.parse(data);
 console.log(dataObj[0].image);
@@ -22,10 +25,13 @@ http.createServer((req,res)=>
   output = output.replace(/{%vitamen%}/g,dataObj.nutrients)
   output = output.replace(/{%from%}/g,dataObj.from)
   output = output.replace(/{%description%}/g,dataObj.description)
-    if(dataObj.organic == true){
+    if(dataObj.organic == true)
+    {
       output = output.replace(/{%type%}/g,"organic!")
       output = output.replace(/{%type-class%}/g,"organic")
-    }else{
+    }
+    else
+    {
       output = output.replace(/{%type%}/g,"not organic!")
       output = output.replace(/{%type-class%}/g,"not-organic")
     }
@@ -59,4 +65,5 @@ http.createServer((req,res)=>
         });
         res.end('<h1>Page not found!</h1>');
       }   
-}).listen(7000);      
+      fileServer.serve(req, res);
+}).listen(5000);      

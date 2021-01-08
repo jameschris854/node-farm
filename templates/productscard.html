@@ -30,7 +30,7 @@
           line-height: 1.7;
           font-family: "Nunito Sans", sans-serif;
           color: #555;
-          min-height: 120vh;
+          min-height: 160vh;
           background: linear-gradient(to bottom right, #9be15d, #00e3ae);
         }
         .container {
@@ -43,7 +43,7 @@
         .title {
           display: block;
           font-family: "Megrim", sans-serif;
-          font-size: 3rem;
+          font-size: 4rem;
           color: white;
           transform: skewY(-5deg);
           text-align: center;
@@ -52,18 +52,18 @@
         }
         .title::before {
           content: "";
-          display: block;
-          height: 65%;
-          width: 100%;
-          position: absolute;
-          top: 105%;
-          left: 50%;
-          background: linear-gradient(to bottom, #9be15d, #00e3ae);
-          opacity: 0.1;
-          z-index: -1;
-          transform: skewY(370deg) translate(-50%, -50%);
-          box-shadow: 0px 0px 0px 0px #00e3ae;
-          transition: 0s;
+    display: block;
+    height: 63%;
+    width: 31%;
+    position: absolute;
+    top: 101%;
+    left: 51%;
+    background: linear-gradient(to bottom, #9be15d, #00e3ae);
+    opacity: 0;
+    z-index: -1;
+    transform: skewY(369deg) translate(-50%, -50%);
+    box-shadow: 0px 0px 0px 0px #00e3ae;
+    transition: 0s;
         }
         .title:hover::before {
           opacity: 0.8;
@@ -80,20 +80,35 @@
           margin-top: 4rem;
           box-shadow: 0 3rem 6rem 1rem rgba(0, 0, 0, 0.2);
         }
-        .back {
+        .back  {
           position: absolute;
           height: 2rem;
           align-self: flex-start;
-          z-index: 2;
-          margin-left: 1rem;
-        }
-        .back > a > img {
+          z-index: 200;
           height: 2.5rem;
-          z-index: 2;
+          z-index: 200;
           transition: 0.3s;
+          box-shadow: 0px 0px 6px 2px #aeff9f;
+    background: limegreen;
+    border: solid 1px white;
+        transform: translate(-20px, 8px);
+        padding-bottom: 2.7rem;
         }
-        .back > a > img:hover {
-          transform: scale(1.1);
+        .back>a{
+          font-size: 1.5rem;
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: bolder;
+    color: white;
+    font-family: emoji;
+    /* text-shadow: 1px 3px 6px black; */
+    transform: translatex(5px);
+    /* border: solid 1px; */
+    padding: 1rem;
+    border-radius: 10%;
+        }
+        .back:hover {
+          transform: translate(-20px, 8px) scale(1.1);
         }
         .organic {
           position: absolute;
@@ -120,6 +135,7 @@
           color: white;
           text-align: center;
           margin-top: 38%;
+          z-index: 200;
         }
         .image > img {
           opacity: 1;
@@ -189,6 +205,7 @@
         .organic {
         
         color:rgb(50, 205, 89);
+        z-index: 200;
         
         }
         .not-organic {
@@ -196,6 +213,83 @@
         display: none;
         
         }
+        .product__hero {
+        position: unset;
+        height: 22rem;
+      }
+
+      .product__hero::before {
+        content: '';
+        display: block;
+        height: 36%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(to left bottom, #9be15d, #00e3ae);
+        opacity: 0.5;
+        z-index: 100;
+        overflow: hidden;
+      }
+
+      .product__emoji {
+        font-size: 10rem;
+        position: absolute;
+      }
+
+      .product__emoji--1 {
+        left: -1rem;
+        z-index: 10;
+      }
+
+      .product__emoji--2 {
+        top: 7rem;
+    left: 20rem;
+      }
+
+      .product__emoji--3 {
+        top: 8rem;
+    right: 19rem
+      }
+
+      .product__emoji--4 {
+        top: 8rem;
+    right: 10rem;
+    z-index: 10;
+      }
+
+      .product__emoji--5 {
+        bottom: 647px;
+    left: 18rem;
+      }
+
+      .product__emoji--6 {
+        
+   
+        bottom: 46rem;
+    right: 10rem;
+
+
+}
+      
+
+      .product__emoji--7 {
+        
+    bottom: 44rem;
+    right: 14rem;
+
+      }
+
+      .product__emoji--8 {
+        bottom: 46rem;
+    right: 0rem;
+}
+      
+
+      .product__emoji--9 {
+        top: 7rem;
+    left: -1rem;
+      }
 
     </style>
 </head>
@@ -203,9 +297,19 @@
     <div class="container">
         <div class="title">🌽 Node Farm 🥦</div>
         <div class="layout"> 
-            <div class="back"><a href="#"><img src="/images/back.png" alt=""></a></div>
+            <div class="back"><a href="http://127.0.0.1:5000/">👈 back</a></div>
             <div class="type {%type-class%}"><div>{%type%}</div></div>
-            <div class="image"><img src="/images/avacado.jpg" alt=""></div>
+            <div class="product__hero">
+              <span class="product__emoji product__emoji--1">{%emoji%}</span>
+              <span class="product__emoji product__emoji--2">{%emoji%}</span>
+              <span class="product__emoji product__emoji--3">{%emoji%}</span>
+              <span class="product__emoji product__emoji--4">{%emoji%}</span>
+              <span class="product__emoji product__emoji--5">{%emoji%}</span>
+              <span class="product__emoji product__emoji--6">{%emoji%}</span>
+              <span class="product__emoji product__emoji--7">{%emoji%}</span>
+              <span class="product__emoji product__emoji--8">{%emoji%}</span>
+              <span class="product__emoji product__emoji--9">{%emoji%}</span>
+            </div>
             <div class="product-name"><div>{%productname%}</div></div>
             <div class="grid">
                 <div>🌍 {%from%}</div>

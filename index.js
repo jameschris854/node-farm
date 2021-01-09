@@ -66,4 +66,4 @@ http.createServer((req,res)=>
         res.end('<h1>Page not found!</h1>');
       }   
       fileServer.serve(req, res);
-}).listen(5000);      
+}).listen(process.env.PORT || 5000);      
